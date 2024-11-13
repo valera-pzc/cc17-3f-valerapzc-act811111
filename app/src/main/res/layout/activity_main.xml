@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--on below line we are creating a swipe to refresh layout-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentTop="false"
     android:background="#FFFFFF"
     android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--recycler view for displaying our list of books-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#50B7D5"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Bookshelf App"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--progressbar for displaying our loading indicator-->
+
     <LinearLayout
         android:id="@+id/idLLsearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@id/linearLayout2"
+        android:layout_marginTop="58dp"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -34,24 +59,27 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#EDE20B"
+            android:background="#D5D4CF"
             android:src="@android:drawable/ic_menu_search" />
 
     </LinearLayout>
 
-    <!--recycler view for displaying our list of books-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVBooks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idLLsearch"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+        android:layout_marginTop="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idLLsearch" />
 
-    <!--progressbar for displaying our loading indicator-->
     <ProgressBar
         android:id="@+id/idLoadingPB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:visibility="gone" />
 

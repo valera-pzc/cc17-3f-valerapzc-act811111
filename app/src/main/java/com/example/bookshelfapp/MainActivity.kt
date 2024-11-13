@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             loadingPB.visibility = View.VISIBLE
             // checking if our edittext field is empty or not.
             if (searchEdt.text.toString().isNullOrEmpty()) {
-                searchEdt.setError("Please enter search query")
+                searchEdt.setError("Please enter a book")
             }
             // if the search query is not empty then we are
             // calling get book info method to load all
