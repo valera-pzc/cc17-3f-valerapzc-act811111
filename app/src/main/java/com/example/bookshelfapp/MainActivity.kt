@@ -1,7 +1,6 @@
 package com.example.bookshelfapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
@@ -18,11 +17,11 @@ import com.android.volley.toolbox.Volley
 class MainActivity : AppCompatActivity() {
 
     // on below line we are creating variables.
-    lateinit var mRequestQueue: RequestQueue
-    lateinit var booksList: ArrayList<BookRVModal>
-    lateinit var loadingPB: ProgressBar
-    lateinit var searchEdt: EditText
-    lateinit var searchBtn: ImageButton
+    private lateinit var mRequestQueue: RequestQueue
+    private lateinit var booksList: ArrayList<BookRVModal>
+    private lateinit var loadingPB: ProgressBar
+    private lateinit var searchEdt: EditText
+    private lateinit var searchBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
