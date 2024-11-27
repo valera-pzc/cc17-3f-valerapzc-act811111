@@ -1,4 +1,4 @@
-package com.example.bookshelfapp
+package com.example.shelfapp
 
 import android.os.Bundle
 import android.view.View
@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
 
     // on below line we are creating variables.
     private lateinit var mRequestQueue: RequestQueue
-    private lateinit var booksList: ArrayList<BookRVModal>
+    private lateinit var booksList: ArrayList<BookModel>
     private lateinit var loadingPB: ProgressBar
     private lateinit var searchEdt: EditText
     private lateinit var searchBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_bookshelf_main)
 
         // on below line we are initializing
         // our variable with their ids.
@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                     val itemsObj = itemsArray.getJSONObject(i)
                     val volumeObj = itemsObj.getJSONObject("volumeInfo")
                     val title = volumeObj.optString("title")
+                    val genre = volumeObj.optString("subtitle")
                     val subtitle = volumeObj.optString("subtitle")
                     val authorsArray = volumeObj.getJSONArray("authors")
                     val publisher = volumeObj.optString("publisher")
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     // after extracting all the data we are
                     // saving this data in our modal class.
-                    val bookInfo = BookRVModal(
+                    val bookInfo = BookModel(
                         title,
                         subtitle,
                         authorsArrayList,
@@ -119,7 +120,7 @@ class MainActivity : AppCompatActivity() {
 
                     // below line is use to pass our
                     // array list in adapter class.
-                    val adapter = BookRVAdapter(booksList, this@MainActivity)
+                    val adapter = BookListAdapter(booksList, this@MainActivity)
 
                     // below line is use to add linear layout
                     // manager for our recycler view.

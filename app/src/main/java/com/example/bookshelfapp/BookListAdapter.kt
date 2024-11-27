@@ -1,4 +1,4 @@
-package com.example.bookshelfapp
+package com.example.shelfapp
 
 import android.content.Context
 import android.content.Intent
@@ -11,29 +11,29 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class BookRVAdapter(
+class BookListAdapter(
     // on below line we are passing variables
     // as course list and context
-    private var bookList: ArrayList<BookRVModal>,
+    private var bookList: ArrayList<BookModel>,
     private var ctx: Context
-) : RecyclerView.Adapter<BookRVAdapter.BookViewHolder>() {
+) : RecyclerView.Adapter<BookListAdapter.BookViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): BookRVAdapter.BookViewHolder {
+    ): BookListAdapter.BookViewHolder {
         // this method is use to inflate the layout file
         // which we have created for our recycler view.
         // on below line we are inflating our layout file.
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.book_item,
+            R.layout.item_book,
             parent, false
         )
         // at last we are returning our view holder
         // class with our item View File.
-        return BookRVAdapter.BookViewHolder(itemView)
+        return BookListAdapter.BookViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: BookRVAdapter.BookViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BookListAdapter.BookViewHolder, position: Int) {
         val bookInfo = bookList[position]
 
         var modifiedThumbnailUrl = bookInfo.thumbnail
@@ -53,9 +53,9 @@ class BookRVAdapter(
         holder.itemView.setOnClickListener {
             // inside on click listener method we are calling a new activity
             // and passing all the data of that item in next intent.
-            val i = Intent(ctx, BookDetailsActivity::class.java)
+            val i = Intent(ctx, BookInfoActivity::class.java)
             i.putExtra("title", bookInfo.title)
-            i.putExtra("subtitle", bookInfo.subtitle)
+            i.putExtra("genre", bookInfo.subtitle)
             i.putExtra("authors", bookInfo.authors)
             i.putExtra("publisher", bookInfo.publisher)
             i.putExtra("publishedDate", bookInfo.publishedDate)

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bookshelfapp"
+    namespace = "com.example.shelfapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bookshelfapp"
+        applicationId = "com.example.shelfapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

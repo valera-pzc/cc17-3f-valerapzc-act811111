@@ -1,6 +1,6 @@
-package com.example.bookshelfapp
+package com.example.shelfapp
 
-data class BookRVModal(
+data class BookModel(
     var title: String,
     var subtitle: String,
     var authors: ArrayList<String>,

@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".BookDetailsActivity">
+    android:background="#D3F1DF"
+    tools:context=".BookInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="#D3F1DF"
         android:orientation="vertical">
 
         <LinearLayout
@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!--Image view for displaying our book image-->
             <ImageView
                 android:id="@+id/idIVbook"
                 android:layout_width="130dp"
@@ -30,7 +29,6 @@
                 android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
-                <!--Text view for displaying book publisher-->
                 <TextView
                     android:id="@+id/idTVpublisher"
                     android:layout_width="match_parent"
@@ -38,38 +36,25 @@
                     android:fontFamily="@font/roboto"
                     android:padding="4dp"
                     android:text="Publisher"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textColor="#5A6C57"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                <!--text view for displaying number of pages of book-->
                 <TextView
-                    android:id="@+id/idTVNoOfPages"
+                    android:id="@+id/idTVAuthor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/roboto"
                     android:padding="4dp"
-                    android:text="Number of Pages"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <!--text view for displaying book publish date-->
-                <TextView
-                    android:id="@+id/idTVPublishDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/roboto"
-                    android:padding="4dp"
-                    android:text="Publish Date"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
+                    android:text="Author Name"
+                    android:textColor="#5A6C57"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
 
-        <!--text view for displaying book title-->
         <TextView
             android:id="@+id/idTVTitle"
             android:layout_width="match_parent"
@@ -77,24 +62,23 @@
             android:layout_margin="4dp"
             android:fontFamily="@font/roboto"
             android:padding="4dp"
-            android:text="title"
-            android:textColor="@color/black"
+            android:text="Title"
+            android:textColor="#5A6C57"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!--text view for displaying book subtitle-->
         <TextView
-            android:id="@+id/idTVSubTitle"
+            android:id="@+id/idTVGenre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:fontFamily="@font/roboto"
             android:padding="4dp"
-            android:text="subtitle"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="Genre"
+            android:textColor="#5A6C57"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-        <!--text view for displaying book description-->
         <TextView
             android:id="@+id/idTVDescription"
             android:layout_width="match_parent"
@@ -102,9 +86,10 @@
             android:layout_margin="4dp"
             android:fontFamily="@font/roboto"
             android:padding="4dp"
-            android:text="description"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="Description"
+            android:textColor="#5A6C57"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,30 +98,25 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <!--button for displaying book preview-->
             <Button
                 android:id="@+id/idBtnPreview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60sp"
-                android:backgroundTint="#ba181b"
+                android:backgroundTint="#001F3F"
                 android:text="Preview"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />
 
-            <!--button for opening buying page of the book-->
             <Button
                 android:id="@+id/idBtnBuy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="75sp"
-                android:backgroundTint="#ba181b"
+                android:backgroundTint="#001F3F"
                 android:text="Buy"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />
-
         </LinearLayout>
-
     </LinearLayout>
-
 </ScrollView>
